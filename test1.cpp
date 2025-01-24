@@ -14,7 +14,7 @@ double constrainAngle(double inputDegree){
     return atan2(sin(inputDegree), cos(inputDegree));
 }
 
-
+//this doesn't have an exit condition
 void gyroTurnKpKd(double targetAngle){
     double kp = 0.1;
     double kd = 0.1;
@@ -26,11 +26,11 @@ void gyroTurnKpKd(double targetAngle){
         double derivative = error - lastError;
         std::cout << error * kp + derivative * kd << std::endl;
         lastError = error;
-        pros::delay(10);
+        //pros::delay(10);
     }
 }
 
-
+//this doesn't have an exit condition
 void gyroTurnPID(double targetAngle){
     double kp = 0.1;
     double kd = 0.1;
@@ -58,7 +58,7 @@ void gyroTurnPID(double targetAngle){
         }
         std::cout << error * kp + derivative * kd + integral * ki << std::endl;
         lastError = error;
-        pros::delay(10);
+        //pros::delay(10);
     }
 }
 
